@@ -7,7 +7,7 @@ class Game extends Phaser.Game {
   constructor() {
     super(config);
 
-    this.socket = io(); //escolha de caminho
+    this.socket = io();  //escolha de caminho
 
     this.socket.on("connect", () => {
       this.socket.emit("registro", this.socket.id);

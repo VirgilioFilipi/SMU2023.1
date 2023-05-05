@@ -8,7 +8,7 @@ const conn_limit = 100;
 io.on("connection", (socket) => {
   socket.on("registro", (id) => {
     /* Verifica se o registro é válido */
-    if (conn_limit > io.sockets.adapter.sids.size) { //limite te jogadores estabelecido
+    if (conn_limit > io.sockets.adapter.sids.size) {  //limite te jogadores estabelecido
       socket.emit("registro-aceito");
     } else {
       socket.emit("registro-negado");
