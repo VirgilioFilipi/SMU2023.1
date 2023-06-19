@@ -6,6 +6,7 @@ export default class presenca extends Phaser.Scene {
   preload() {}
 
   create() {
+    
     navigator.mediaDevices
       .getUserMedia({ video: false, audio: true })
       .then((stream) => {

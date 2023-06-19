@@ -102,7 +102,7 @@ export default class abertura extends Phaser.Scene {
         if (this.game.registro) {
           this.game.socket.emit("entrar-na-sala", this.sala);
         } else {
-          console.log("Usuário não registrado no servidor.")
+          console.log("Usuário não registrado, acesso negado")
         }
       });
     });

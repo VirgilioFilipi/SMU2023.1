@@ -9,16 +9,15 @@ const room_limit = 10;
 io.on("connection", (socket) => {
   socket.on("registro", (id) => {
     /* Verifica se o registro é válido */
-    if (conn_limit > io.sockets.adapter.sids.size) {  //limite te jogadores estabelecido
-      socket.emit("registro-aceito");
+    if (conn_limit > io.sockets.adapter.sids.size) {
+      socket.emit("registro_aceito");
     } else {
-      socket.emit("registro-negado");
+      socket.emit("registro_negado");
     }
   });
 
-  socket.on("entrar-sala", (sala) => {
+  socket.on("entrar-na-sala", (sala) => {
     socket.join(sala);
-
     if (io.sockets.adapter.rooms.get(sala).size > room_limit) {
       socket.leave(sala);
     } else {
